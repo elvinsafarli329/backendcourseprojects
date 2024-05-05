@@ -78,7 +78,18 @@
 
 # TASK6
 # given = ["Rick Sanchez", "Morty Smith", "Summer Smith", "Jerry Smith", "Beth Smith"]
-# print([i.split()[0] for i in given])
+
+#         # list comprehesion ile
+# print([i.split()[0] for i in given])          
+
+#         # loop elave ederk
+# new = []
+# for i in given:
+#     new.append(i.split())
+
+# names = [i[0] for i in new]
+# print(names)
+
 
 # TASK7
 # nums1 = [1, 2, 5]
