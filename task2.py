@@ -31,42 +31,34 @@
 
 
 # TASK 3
-# ededler = input("ededleri daxil edin: ").split()
-
 # def hasil():
-#     global saver
+#     ededler = input("ededleri daxil edin: ").split()
 #     saver = 1
-#     ededList = []
 #     for i in ededler:
-#         ededList.append(int(i))
-#     for a in ededList:
-#         saver *= a
+#         saver *= int(i)
 #     return saver
-
-# hasil()
-# print(saver)
+# print(hasil())
 
 
 
 # TASK4
 # number = int(input("eded daxil edin: "))
 
-                  #list comprehension
-# bolenler = [i for i in range(1, number+1) if number % i == 0]
-# print(bolenler)
+#                 #   list comprehension
+# print([i for i in range(1, number+1) if number % i == 0])
 
                #funksya ile
-# bolenler = []
 # def bolentap():
+#     number = int(input("eded daxil edin: "))
 #     i = 1
+#     bolenler = []
 #     while i <= number:
 #         if number % i == 0:
 #             bolenler.append(i)
 #         i += 1
+#     print(bolenler)
 
 # bolentap()
-# print(bolenler)
-
 
 
 
