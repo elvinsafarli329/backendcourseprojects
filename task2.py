@@ -1,33 +1,30 @@
 # TASK1
-# mylist=[-2,3,7,9,16,25,36,49,64,81,100]
-# modifiedList = []
+# mylist = [-2, 3, 7, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # def netice():
+#     modifiedList = []
 #     for i in mylist:
-#         if i<0:
+#         if i < 0:
 #             continue
-#         elif float(pow(i, 0.5)) == int(pow(i, 0.5)):  # bu setiri elif float(pow(i, 0.5)).is_integer(): evez etmek olar
+#         elif float(pow(i, 0.5)) == int(pow(i, 0.5)): # bu setiri elif float(pow(i, 0.5)).is_integer(): evez etmek olar
 #             modifiedList.append(i)
-#         else:
-#             continue
-# netice()
-# print(modifiedList)
+#     return modifiedList
+
+# kokler = netice()
+# print(kokler)
+
 
 #  TASK2
 # inputList = [-1,1,2,2,6,7,5,4,4,7,'say']
-# modifiedList = []
 
 # def netice():
+#     modifiedList = []
 #     for i in inputList:
-#         if inputList.count(i) > 1:
-#             continue
-#         else :
+#         if inputList.count(i) == 1:
 #             modifiedList.append(i)
-
-# netice()
-# print(modifiedList)
-
-
+#     return modifiedList
+# daralmislist = netice()
+# print(daralmislist)
 
 
 # TASK 3
@@ -38,7 +35,6 @@
 #         saver *= int(i)
 #     return saver
 # print(hasil())
-
 
 
 # TASK4
