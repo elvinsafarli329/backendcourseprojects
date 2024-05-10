@@ -14,3 +14,4 @@ class hesab():
 
 Hesab = hesab()
 print(Hesab.get_num(5))
+print(Hesab.get_num(33))
