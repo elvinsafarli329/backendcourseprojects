@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: aqua;
+    color: black;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.movies_div {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies_div ul {
+    display: flex;
+    padding: 40px;
+    gap: 50px;
+}
+
+.movies_div ul li {
+    border: 1px solid black;
+    padding: 20px
+}
