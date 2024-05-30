@@ -6,3 +6,8 @@ from .models import Movies
 def main_page(request):
     movies_data = Movies.objects.all()
     return render(request, 'index.html', {"movies_data": movies_data})
+
+
+def about_page(request):
+    return render(request, 'about.html')
+

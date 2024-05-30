@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page__title %}
+    Login Page
+{% endblock page__title %}
+
+
+{% block body %}
+    <h2>Giris</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        
+        <button>Log In</button>
+    </form>
+
+{% endblock body %}
+    

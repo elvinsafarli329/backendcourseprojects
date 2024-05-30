@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page__title %}
+    Register Page
+{% endblock page__title %}
+
+{% block body %}
+    <h2>Qeydiyyat seyfesi</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button>Sign In</button>
+    </form>
+{% endblock body %}
