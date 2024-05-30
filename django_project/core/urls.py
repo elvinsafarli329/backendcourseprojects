@@ -20,5 +20,6 @@ from movies.views import main_page
 
 urlpatterns = [
     path("", main_page, name = "main" ),
+    path("account/", include("account.urls")),
     path('admin/', admin.site.urls),
 ]
