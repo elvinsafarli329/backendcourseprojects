@@ -36,11 +36,11 @@ def login_page(request):
         user = authenticate(username=username, password=password)
         
         if user is None:
-            return render(request, "login.html", context)
+            return render(request, "login.html")
         
         login(request, user)
         return redirect("main")
-    return render(request, "login.html")
+    return render(request, "login.html", context)
 
 def logout_page(request):
     logout(request)
