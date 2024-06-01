@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}?v={{ STATIC_VERSION }}">
     <link rel="stylesheet" href="{% static 'navbar.css' %}?v={{ STATIC_VERSION }}">
     <link rel="stylesheet" href="{% static 'login-register.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,17 +28,17 @@
             <li><a href="{% url 'main' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About us</a></li>
             <li><a href="{% url 'account:contact' %}">Contact us</a></li>
-            <li><a href="{% url 'account:success' %}">success</a></li>
-            
+            <!-- <li><a href="{% url 'account:success' %}">success</a></li> -->
+            <li><a href="{% url 'movies' %}">All movies</a></li>
             {% if request.user.is_authenticated%}
             <div class="dropdown">
-              Movies <i class="fa-solid fa-chevron-down"></i>
+              Profile <i class="fa-solid fa-chevron-down"></i>
               <div class="dropdown-content">
-                <a href="{% url 'movies' %}">All movies</a>
-                <a href="{% url 'my-movies' %}">Liked Movies</a>
+                <a href="{% url 'add-movies' %}">Add Movies</a>
+                <a href="">Settings</a>
+                <a href="{% url 'account:logout' %}">Leave</a>
               </div>
             </div>
-            <li><a href="{% url 'account:logout' %}">Leave</a></li>
             {% else %}
             <li><a href="{% url 'account:login' %}">Login</a></li>
             <!-- <li><a href="{% url 'account:register' %}">Register</a></li> -->

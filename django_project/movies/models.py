@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Movies(models.Model):
@@ -9,4 +10,15 @@ class Movies(models.Model):
 
 
     def __str__(self):
-        return f"{self.name} | {self.year}"
+        return f"{self.name} | {self.year} | {self.category}"
+    
+
+# class LikedMovie(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
+
+#     class Meta:
+#         unique_together = ('user ', 'movie')
+
+#     def __str__(self):
+#         return f"{self.user.username} likes {self.movie.title}"
