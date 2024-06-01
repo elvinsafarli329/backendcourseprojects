@@ -7,13 +7,22 @@
 
 {% block body %}
     <h2>Giris</h2>
-
+<div class="login_design">
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        <div class="login-page">
+            <label for="{{form.username.id_for_label}}">Enter username</label>
+            {{form.username}}
+        </div>
+        <div class="login-page">
+            <label for="{{form.password.id_for_label}}">Enter password</label>
+            {{form.password}}
+        </div>
         
         <button>Log In</button>
     </form>
+    <p>Don't have an account yet? <a href="{% url 'account:register' %}">Register</a></p>
+</div>
 
 {% endblock body %}
     

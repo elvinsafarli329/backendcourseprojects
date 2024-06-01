@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block page__title %}
+    Movies
+{% endblock page__title %}
+    
+
+
+{% block body %}
+    <h2>Movies</h2>
+
+    <div class="movies_div">
+        <ul>
+        
+        {% for movie in movies_data %}
+            <li>
+                <h3>{{movie.name}}</h3>
+                <h4>{{movie.year}}</h4>
+                <i>{{movie.recommender}}</i>
+            </li>
+        {% endfor %}
+        
+        </ul>
+    </div>
+    
+{% endblock body %}
+    

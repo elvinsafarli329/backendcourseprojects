@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-
+from .models import ContactMessage
 
 class RegisterForm(forms.Form):
     email = forms.EmailField()
@@ -33,3 +33,9 @@ class RegisterForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=30, label="Username")
     password = forms.CharField(max_length=10, label="Password", widget=forms.PasswordInput)
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'message']
+

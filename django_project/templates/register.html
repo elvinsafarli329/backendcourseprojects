@@ -6,11 +6,27 @@
 
 {% block body %}
     <h2>Qeydiyyat seyfesi</h2>
-
+<div class="login_design">
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        <div class="login-page">
+            <label for="{{form.email.id_for_label}}">Enter email</label>
+            {{form.email}}
+        </div>
+        <div class="login-page">
+            <label for="{{form.username.id_for_label}}">Enter username</label>
+            {{form.username}}
+        </div>
+        <div class="login-page">
+            <label for="{{form.password.id_for_label}}">Enter password</label>
+            {{form.password}}
+        </div>
+        <div class="login-page">
+            <label for="{{form.confirm.id_for_label}}">Confirm password</label>
+            {{form.confirm}}
+        </div>
 
         <button>Sign In</button>
     </form>
+</div>
 {% endblock body %}
