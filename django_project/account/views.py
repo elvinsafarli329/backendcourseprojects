@@ -57,7 +57,7 @@ def contact_page(request):
     if form.is_valid():
         form.save()
         messages.success(request, "Your message has been sent successfully.")
-        return redirect('success')
+        return redirect('account:success')
     return render(request, 'contact.html', context)
 
 def success_view(request):

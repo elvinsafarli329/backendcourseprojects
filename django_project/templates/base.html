@@ -28,7 +28,7 @@
             <li><a href="{% url 'main' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About us</a></li>
             <li><a href="{% url 'account:contact' %}">Contact us</a></li>
-            <!-- <li><a href="{% url 'account:success' %}">success</a></li> -->
+            <li><a href="{% url 'account:success' %}">success</a></li>
             
             {% if request.user.is_authenticated%}
             <div class="dropdown">

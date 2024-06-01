@@ -7,16 +7,17 @@
 
 {% block body %}
 <div class="login_design">
-<form action="/contact/" method="post">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-        </div>
-    {% endfor %}
-    <input type="submit" value="Submit">
- </form>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
 </div>
+
 {% endblock body %}
     
