@@ -25,6 +25,7 @@
     </div> 
     <form method="post">
       {% csrf_token %}
+      {{form.media}}
       {{form.as_p}}
 
       <button class="btn">Elave et</button>

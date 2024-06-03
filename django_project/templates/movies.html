@@ -15,9 +15,10 @@
         
         {% for movie in movies_data %}
             <li>
-                <h3>{{movie.name}}</h3>
+                <h3><a href="{% url 'detail' movie.id %}">{{movie.name}}</a></h3>
                 <h4>{{movie.year}}</h4>
-                <i>{{movie.recommender}}</i>
+                <i>{{movie.recommender}}</i><br>
+                <p>{{movie.detail|safe|truncatechars:50}}</p>
             </li>
         {% endfor %}
         

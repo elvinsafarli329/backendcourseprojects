@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+
+/* NavBar part of the project */
+.container {
+  width: 1440px;
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  z-index: 3;
+}
+
+.logo img {
+  width: 160px;
+  height: 60px;
+}
+
+.links ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* selecting the "Home" to be black as a default */
+.links ul li:first-of-type a {
+  color: black;
+}
+
+.links ul li a {
+  color: gray;
+  transition: 0.3s ease;
+}
+
+.links ul li a:hover {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}

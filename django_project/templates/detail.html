@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page__title %}
+    Detail Page
+{% endblock page__title %}
+
+{% block body %}
+        <h2>Movies description</h2>
+        <ul>
+            <li>
+                <h3>{{movie.name}}</h3>
+                <h4>{{movie.year}}</h4>
+                <i>{{movie.recommender}}</i><br>
+                <p>{{movie.detail | safe}}</p>
+            </li>
+        </ul>
+{% endblock body %}
+

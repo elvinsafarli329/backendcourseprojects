@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Movies(models.Model):
@@ -7,10 +8,12 @@ class Movies(models.Model):
     name = models.CharField(max_length=200)
     category = models.CharField(max_length=100)
     recommender = models.ForeignKey("auth.User", on_delete=models.CASCADE)
+    detail = RichTextField()
+    image = models.ImageField(blank=True, null=True, verbose_name="add image")
 
 
     def __str__(self):
-        return f"{self.name} | {self.year} | {self.category}"
+        return f"{self.name} | {self.year} | {self.category} | {self.detail}"
     
 
 # class LikedMovie(models.Model):
