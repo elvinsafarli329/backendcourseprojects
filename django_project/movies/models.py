@@ -9,7 +9,7 @@ class Movies(models.Model):
     category = models.CharField(max_length=100)
     recommender = models.ForeignKey("auth.User", on_delete=models.CASCADE)
     detail = RichTextField()
-    image = models.ImageField(blank=True, null=True, verbose_name="add image")
+    image = models.FileField(blank=True, null=True, verbose_name="add image")
 
 
     def __str__(self):

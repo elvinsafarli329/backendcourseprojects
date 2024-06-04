@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block page__title %}
+    Update Movies
+{% endblock page__title %}
+    
+
+
+{% block body %}
+    <h2>Update Movies</h2>
+
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.media}}
+      {{form.as_p}}
+
+      <button class="btn">Update</button>
+    </form>
+    
+{% endblock body %}

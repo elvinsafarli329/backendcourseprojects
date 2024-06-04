@@ -32,8 +32,8 @@ h2 {
 
 .movies_div ul li {
     border: 1px solid black;
-    width: 25%;
-    padding: 20px
+    width: auto;
+    padding: 20px;
 }
 
 /* Dropdown */
@@ -78,3 +78,7 @@ h2 {
     display: block;
 }
 
+.movies_details img {
+    width: 400px;
+    height: 500px;
+}

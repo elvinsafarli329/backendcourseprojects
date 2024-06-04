@@ -10,7 +10,7 @@
 {% block body %}
     <h2>My Movies</h2>
 
-    <div class="movies_div">
+
         <ul>
         
         {% for movie in movies_data %}
@@ -22,8 +22,8 @@
         {% endfor %}
         
         </ul>
-    </div> 
-    <form method="post">
+
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{form.media}}
       {{form.as_p}}
