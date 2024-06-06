@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block page__title %}
+    Settings
+{% endblock page__title %}
+
+
+
+{% block body %}
+<!-- <div class="settings-container">
+    <h1>Settings</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ password_form.as_p }}
+        {{ photo_form.as_p }}
+        <button type="submit">Update Settings</button>
+    </form>
+    <div id="message">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div> -->
+
+<h2>Change Password</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Change Password</button>
+</form>
+{% endblock body %}

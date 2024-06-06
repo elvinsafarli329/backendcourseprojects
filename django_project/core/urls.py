@@ -19,16 +19,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from movies.views import *
+from movies.views import ChangePasswordView
 
 urlpatterns = [
     path("", main_page, name = "main" ),
     path("about/", about_page, name="about"),
     path("movies/", movies_page, name="movies"),
     path("add/", add_movies_page, name="add-movies"),
+    path("settings/", ChangePasswordView.as_view(), name="settings"),
     path("update/<int:id>", update_movies_page, name="update"),
     path("delete-movies/<int:id>", delete_movies_page, name="delete"),
     path("account/", include("account.urls")),
     path('detail/<int:id>', detail_page, name = "detail"),
+    path("addcomment/<int:id>", add_comment, name="comment" ),
     path('admin/', admin.site.urls),
 ]
 

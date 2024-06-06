@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
 
 # Create your models here.
@@ -16,12 +16,35 @@ class Movies(models.Model):
         return f"{self.name} | {self.year} | {self.category} | {self.detail}"
     
 
-# class LikedMovie(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
+class WriteComment(models.Model):
+    movie = models.ForeignKey(Movies, on_delete=models.CASCADE, verbose_name="movie", related_name="comments")
+    commenter = models.CharField(max_length=20, verbose_name="Name")
+    comment_content = RichTextField(verbose_name="content")
 
-#     class Meta:
-#         unique_together = ('user ', 'movie')
 
-#     def __str__(self):
-#         return f"{self.user.username} likes {self.movie.title}"
+    def __str__(self):
+        return f"{self.commenter}"
+    
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.db import models
+
+class CustomUser(AbstractUser):
+    # Add any additional fields here if needed
+
+    # Override the groups field
+    groups = models.ManyToManyField(
+        Group,
+        related_name='customuser_set',  # Unique related name
+        blank=True,
+        help_text='The groups this user belongs to.',
+        verbose_name='groups',
+    )
+
+    # Override the user_permissions field
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='customuser_permissions_set',  # Unique related name
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )

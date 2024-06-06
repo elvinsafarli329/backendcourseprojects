@@ -9,23 +9,34 @@
 
 {% block body %}
     <h2>Movies</h2>
+    <form method="get">
+        {% csrf_token %}
+        <input type="text" name="keyword">
+        <button type="submit">Search</button>
+    </form>
 
-    <div class="movies_div">
-        <ul>
-        
-        {% for movie in movies_data %}
-            <li>
-                <h3><a href="{% url 'detail' movie.id %}">{{movie.name}}</a></h3>
-                <h4>{{movie.year}}</h4>
-                <i>{{movie.recommender}}</i><br>
-                <p>{{movie.detail|safe|truncatechars:50}}</p>
-                <a href="{% url 'update' movie.id %}"><i class="fa-solid fa-gear"></i></a>
-                <a href="{% url 'delete' movie.id %}"><i class="fa-solid fa-trash"></i></a>
-            </li>
-        {% endfor %}
-        
-        </ul>
-    </div>
+{% if movies_data %}
+<div class="movies_div">
+    <ul>
+    
+    {% for movie in movies_data %}
+        <li>
+            <h3><a href="{% url 'detail' movie.id %}">{{movie.name}}</a></h3>
+            <h4>{{movie.year}}</h4>
+            <i>{{movie.recommender}}</i><br>
+            <p>{{movie.detail|safe|truncatechars:50}}</p>
+            <a href="{% url 'update' movie.id %}"><i class="fa-solid fa-gear"></i></a>
+            <a href="{% url 'delete' movie.id %}"><i class="fa-solid fa-trash"></i></a>
+        </li>
+    {% endfor %}
+    
+    </ul>
+</div>
+{% else %}
+<div class="alert__warning">Movie is not found</div>
+{% endif %}
+    
+
     
 {% endblock body %}
     

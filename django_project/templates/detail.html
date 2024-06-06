@@ -22,5 +22,39 @@
     {% endif %}
 </div>
 
+<div class="comments">
+    <h4>Comments:</h4>
+    
+    {% if comments %}
+        
+        {% for comment in comments %}
+            <div class="comment">
+                <h5>Author: {{comment.commenter}}</h5>
+                <h5>Feedback: {{comment.comment_content}}</h5>
+            </div>
+            <br>
+            <hr>
+            <br>
+        {% endfor %}
+    {% else %}
+    <div class="alert__warning">There are no comments yet</div>
+    {% endif %}
+        
+</div>
+
+<form action="{% url 'comment' movie.id %}" method="post">
+    {% csrf_token %}
+    <div class="comments">
+    <label for="commenter">Name</label>
+    <input type="text" name="commenter" id="commenter">
+    </div>
+    <div class="comments">
+        <label for="commentContent">Feedbacks</label>
+        <textarea type="text" name="comment_content" id="commentContent"></textarea>
+        </div>
+
+        <button type="submit">Send</button>
+</form>
+
 {% endblock body %}
 
