@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiSekiller</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sekiller</h1>
+    <div id="blog-images" style="width: 1000px;"></div>
+
+    <div id="blog-images" class="cards-container"></div>
+
+    <script>
+        fetch('http://127.0.0.1:8000/color-api/list/')
+            .then(response => response.json())
+            .then(data => {
+                const blogImagesDiv = document.getElementById('blog-images');
+                data.forEach(blog => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    const img = document.createElement('img');
+                    img.src = blog.image;
+                    const p = document.createElement('p');
+                    p.textContent = 'Rengi: ' + blog.color + " | Mekan: " + blog.region;
+                    card.appendChild(img);
+                    card.appendChild(p);
+                    blogImagesDiv.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>  
+</body>
+</html>
